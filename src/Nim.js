@@ -21,7 +21,7 @@ class Nim {
        const len = piles.length
 
        for(var i = 0; i < len; i++){
-           if(piles[i] == 0){
+           if(piles[i] === 0){
                continue
            }
            for(var j = 1; j <= piles[i]; j++){
@@ -32,7 +32,7 @@ class Nim {
     }
 
     static other_player(player){
-        if(player == 0){
+        if(player === 0){
             return 1
         }
         return 0
@@ -43,7 +43,7 @@ class Nim {
     }
 
     static isFinish(item){
-        if(item == 0){
+        if(item === 0){
         return true
         }
 
@@ -99,7 +99,7 @@ class NimAi{
     best_future_reward(state){
         var possible_action = Nim.available_action(state)
 
-        if(possible_action.length == 0){
+        if(possible_action.length === 0){
             return 0
         }
 
@@ -126,7 +126,7 @@ class NimAi{
         var len = possible_action.length
         
         /* If Q object is none, return random action */
-        if(Object.keys(this.q).length == 0){
+        if(Object.keys(this.q).length === 0){
             return possible_action[Math.floor(Math.random() * (len - 1))]
         }
 
@@ -150,11 +150,11 @@ class NimAi{
         }
 
         /* If ran is true, with probability of 0.1 return random action, else best action */
-        if(ran == true){
+        if(ran === true){
             var isRandom = Math.floor(Math.random() * 10)
             
 
-            if(isRandom == 0){
+            if(isRandom === 0){
             
 
 
@@ -169,7 +169,7 @@ class NimAi{
 }
 
 function train(n, height){
-    var player = new NimAi
+    var player = new NimAi()
 
     for(var i = 0; i < n; i++){
         console.log(`AI Finish Train ${i+1} times`)

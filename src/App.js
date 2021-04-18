@@ -17,7 +17,7 @@ const HeightInput = () => {
         <React.StrictMode>
           <br></br>
           
-          <br></br>
+   
 
           <BuildTiles yaxis = {heightContainer.current.value}/>
         </React.StrictMode>,

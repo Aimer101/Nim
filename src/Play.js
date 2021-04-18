@@ -22,7 +22,7 @@ function change_color(id){
         
             var last_element = [...clicked][0][0]
 
-            if(last_element != height){
+            if(last_element !== height){
                 return false
             }else {
                 return true
@@ -46,12 +46,12 @@ function change_color(id){
 
     
         
-        if(color == white && isValid()){
+        if(color === white && isValid()){
             element.style.backgroundColor = pink
             return clicked.push(id)
         }
         /* If item is clicked from other pile, error is shown */
-        else if(color == white && !isValid()){
+        else if(color === white && !isValid()){
             const faulty = "Invalid Move (Must Select Item From The Same Row)"
 
             return ReactDOM.render(
@@ -62,7 +62,7 @@ function change_color(id){
               );
 
         }
-        else if(color == pink){
+        else if(color === pink){
             element.style.backgroundColor = white
             return clicked.pop()
 
@@ -109,7 +109,7 @@ const Error = (props) => {
 
 function handleClick(item){
     /* If none item is picked, error is shown */
-    if(item.length == 0){
+    if(item.length === 0){
         const faulty = "Must at least select 1 item"
         return ReactDOM.render(
             <React.StrictMode>
@@ -139,8 +139,8 @@ function handleClick(item){
         element.style.color = 'rgb(239, 192, 80)'  
          
 
-        available[id[0]] = available[id[0]].filter(el => el != id)  
-        nim_array[id[0]] -= 1 
+        available[id[0]] = available[id[0]].filter(el => el !== id)  
+        return nim_array[id[0]] -= 1 
     })
     clicked = []
     if(nim_array.every(Nim.isFinish)){
@@ -153,7 +153,7 @@ function handleClick(item){
 
 const PlayTime = (props) => {
 
-    if(props.turn == "Human"){
+    if(props.turn === "Human"){
         return <>
     <div className = "d-flex justify-content-center">
 
@@ -171,7 +171,7 @@ const PlayTime = (props) => {
 }
 
 function playtime(){
-    if(Human == 0){
+    if(Human === 0){
         ReactDOM.render(
             <React.StrictMode>
               <PlayTime turn = "Human"/>
@@ -266,7 +266,7 @@ function update_ai(action){
         element.style.color = 'rgb(221, 65, 36)'
          
 
-        available[pile] = available[pile].filter(el => el != id)  
+        return available[pile] = available[pile].filter(el => el !== id)  
     })
     clicked = []
     
