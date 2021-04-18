@@ -20,24 +20,28 @@ Nim is a mathematical game of strategy in which two players take turns removing 
 
 ## ABOUT THIS PROJECT
 
-After running npm start, you will be shown a form in which you need to specify between 3 to 9, how much the height of the pile you wish to play with.
+After running npm start, you will be shown a form where you need to specify between 3 to 9.
 
 ![image](https://user-images.githubusercontent.com/60194292/115157613-860f1b00-a08a-11eb-960f-ba9a799ba0aa.png)
 
 
-Next, you will need to specify how much you wish for the AI to be train before you fight against it, it doesnt matter how much as long as it is more than 0
+Next, you need to specify how much you wish for the AI to be trained before you fight against it.
 
 ![image](https://user-images.githubusercontent.com/60194292/115157621-92937380-a08a-11eb-9f34-f23866288864.png)
 
 
-Then you will have to fight against the AI, the goal is the **avoid taking the last 1 item from the pile**.
+Then you have to fight against the AI and the goal is to **avoid taking the last 1 item from the pile**.
 
-The turn on which get to move first is set to random. Each player **must pick at least 1 item per turn**. Player also can only pick item from the same row.
+The turn on which who get to move first is set to random. 
+
+Each player **must pick at least 1 item per turn**. 
+
+Player must **only pick item from the same row**.
 
 ![image](https://user-images.githubusercontent.com/60194292/115157640-a343e980-a08a-11eb-8a4b-9e85a4e4fd0f.png)
 
 ## CONCLUSION
 
-The AI seems to be more intelligent when it is given a high number of training (as high as 10000).
+AI seems to be more intelligent when it is given a higher number of training (as high as 10000).
 
 
