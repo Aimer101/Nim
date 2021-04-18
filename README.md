@@ -12,7 +12,7 @@ Q(current state, action taken) = old_Q_value + alpha*(new value estimate - old_Q
 
 where:
 * alpha = learning rate which is a constant with value of 0.5
-* new value estimate = reward in current stat + reward from taking action
+* new value estimate = reward in current state + reward from taking action in relative to current state
 
 ## ABOUT NIM
 
