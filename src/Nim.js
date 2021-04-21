@@ -172,7 +172,7 @@ function train(n, height){
     var player = new NimAi()
 
     for(var i = 0; i < n; i++){
-        console.log(`AI Finish Train ${i+1} times`)
+        
     
         var game = new Nim(height)
 
@@ -215,8 +215,8 @@ function train(n, height){
     
     
     }
-    console.log('Done Training') 
-    console.log(player.q) 
+     
+     
  
     return player
 

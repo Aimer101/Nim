@@ -160,6 +160,9 @@ const PlayTime = (props) => {
     <button className="btn btn-outline-primary" onClick = {() => handleClick(clicked)}>MAKE MOVE</button>
 
     </div>
+    <br></br>
+    <br></br>
+    <br></br>
     </>
     /* If AI TURN, REMOVE THE BUTTON TO MAKE MOVE */
     }else {
@@ -205,12 +208,7 @@ const MachineLearning = (props) => {
             document.getElementById('ml-train').style.display = "none"
             addListener(height); 
         Human = Math.floor(Math.random() * 2); 
-        ReactDOM.render(
-            <React.StrictMode>
-              <Rules />
-            </React.StrictMode>,
-            document.getElementById('instruction')
-          );
+        Rules()
 
         playtime();
         },1000)
@@ -272,28 +270,70 @@ function update_ai(action){
     
 }
 
-const Rules = () => {
-    return <>
-    <br></br>
-    <br></br>
+const Instruction = () => {
 
-    <div className="d-flex justify-content-center" style = {{color: "white"}}>
-            <p>Rules of the game: </p>
+var modal = document.getElementById("myModal");
+
+    const Law = () => {
+
+        function handleClose(){
+            return modal.style.display = "none";
+        }
+        return <>
+  <div className="modal-content">
+    <span className="close" style = {{textAlign:'right'}} onClick = {() => handleClose()}>&times;</span>
+    <p>Rules of the game: </p>
             
             <ul>
-              <li>The turn on which you can move is set to random</li>
+              <li>The turn on which who can move first is set to random</li>
               <li>You must pick at least 1 item on each turn</li>
               <li>You cannot pick item from different row</li>
               <li>Whoever pick the last 1 item lose the game</li>
             </ul>
-          </div>
+  </div>
+        </>
+    }
+    function handleClick(){
+        ReactDOM.render(
+            <React.StrictMode>
+              <Law />
+            </React.StrictMode>,
+            document.getElementById('myModal')
+          );
+            
+modal.style.display = "block";
+        }
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+    }
+    return <>
+    <br></br>
+    <div style = {{ textAlign: 'center', marginRight:'20px'}}>
+    <button type="button" className="btn btn-outline-info" onClick = {() => handleClick()}>FIRST TIME? READ THE INSTRUCTION</button>
+
+    </div>
     </>
+}
+
+const Rules = () => {
+
+    ReactDOM.render(
+        <React.StrictMode>
+          <Instruction />
+        </React.StrictMode>,
+        document.getElementById('regulation')
+      )
 }
 
 const Winner = (props) => {
 
     const el = document.getElementById('ml')
-    const el2 = document.getElementById('instruction')
+    const el2 = document.getElementById('regulation')
 
     while (el.firstChild) el.removeChild(el.firstChild);
     while (el2.firstChild) el2.removeChild(el2.firstChild);
